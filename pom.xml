@@ -12,6 +12,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.surefire.version>3.0.0</maven.surefire.version>
     </properties>
 
     <dependencies>
@@ -46,6 +47,33 @@
                 </excludes>
             </testResource>
         </testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.version}</version>
+                <!-- <configuration>
+                		<includes>
+                			<include>**/ParallelBuilder.java</include>
+                		</includes>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                </configuration> -->
+                <configuration>
+<!--                    <includes>-->
+<!--                        <include>**/ParallelBuilderWithTags.java</include>-->
+<!--                        <include>**/ParallelBuilderWithCucumberReport.java</include>-->
+<!--                        <include>**/ParallelBuilderWithExtentReport.java</include>-->
+<!--                    </includes>-->
+<!--                    <systemProperties>-->
+<!--                        <location>com/api/automation</location>-->
+<!--                        <tags>@regression</tags>-->
+<!--                        <karate.env>${karate.profile}</karate.env>-->
+<!--                    </systemProperties>-->
+                    <rerunFailingTestsCount>2</rerunFailingTestsCount>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>

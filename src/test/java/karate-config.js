@@ -24,7 +24,8 @@ function fn() {
         "--incognito"                     // Prevents session bleeding
       ],
       startTimeout: 20000, // Increased to 20s to prevent the "connection refused" loop
-      headless: false
+      headless: false,
+      screenshotOnFailure: true
     });
 
     return config;

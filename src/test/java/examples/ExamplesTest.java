@@ -11,7 +11,7 @@ public class ExamplesTest {
     @Test // Standard JUnit 5 annotation
     void testParallel() {
         Results results = Runner.path("classpath:examples/users")
-                .tags("@tag5")
+                .tags("@tag22")
 //                .tags("@confidence, @smoke, @regression") //Comma = OR
 //    			.tags("@confidence", "@smoke", "@regression") // Separate args = AND
 //                .reportDir("target/karate-reports/tags-run")
